@@ -59,4 +59,6 @@ rm -Rf $TMP
 
 cd -
 
+mkdir -p /usr/share/netfilter-persistent/plugins.d
+
 cp 14-my-ipset /usr/share/netfilter-persistent/plugins.d/14-my-ipset 
