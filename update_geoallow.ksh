@@ -9,8 +9,8 @@ fi
 CSV=IP2LOCATION-LITE-DB1.CSV
 TMP=/tmp/ip2loc
 
+rm -Rf ${TMP}
 mkdir -p ${TMP}
-rm -f ${TMP}/${CSV}.ZIP
 wget -P ${TMP}  https://download.ip2location.com/lite/${CSV}.ZIP
 unzip ${TMP}/${CSV}.ZIP -d ${TMP}
 
