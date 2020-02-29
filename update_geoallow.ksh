@@ -18,7 +18,7 @@ unzip ${TMP}/${CSV}.ZIP -d ${TMP}
 
 rm -Rf ${TMP}
 
-rm /etc/ipset/current.ipset
+rm -f /etc/ipset/current.ipset
 cat /etc/ipset/*.ipset > /etc/ipset/current.ipset  2>/dev/null
 
 ipset restore -! < /etc/ipset/current.ipset 2> /dev/null
