@@ -9,12 +9,14 @@ fi
 CSV=IP2LOCATION-LITE-DB1.CSV
 TMP=/tmp/ip2loc
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
 rm -Rf ${TMP}
 mkdir -p ${TMP}
 wget -P ${TMP}  https://download.ip2location.com/lite/${CSV}.ZIP
 unzip ${TMP}/${CSV}.ZIP -d ${TMP}
 
-./iprange2cidr.py --csv ${TMP}/${CSV} --countrycodes 'NL' --ipset_dir /etc/ipset
+${DIR}/iprange2cidr.py --csv ${TMP}/${CSV} --countrycodes 'NL' --ipset_dir /etc/ipset
 
 rm -Rf ${TMP}
 
